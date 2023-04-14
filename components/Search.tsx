@@ -1,10 +1,10 @@
 'use client';
+
 import * as React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
 import { IoCopy } from 'react-icons/io5';
 import Loading from '@/app/loading';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Search = ({ apiUrl }: { apiUrl: string | undefined }) => {
   const [search, setSearch] = React.useState('');
@@ -46,19 +46,7 @@ const Search = ({ apiUrl }: { apiUrl: string | undefined }) => {
 
   return (
     <>
-      <ToastContainer
-        position='top-center'
-        closeButton={false}
-        autoClose={2000}
-        limit={3}
-        hideProgressBar
-        newestOnTop
-        closeOnClick={false}
-        rtl={false}
-        draggable
-        pauseOnHover
-        theme='light'
-      />
+      <Toaster />
       <div className='flex items-center justify-center w-full md:w-[32rem] mt-8'>
         <input
           type='text'
